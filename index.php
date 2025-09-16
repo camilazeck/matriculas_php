@@ -4,7 +4,7 @@
     <title>Título da página</title>
     <meta charset="utf-8">
   </head>
-  <body>a
+  <body>
     <h1>Meu título!</h1>
   <p>Aqui vai o código HTML que fará seu site aparecer.</p>
   <p>Link para o Google: <a href="htpps://google.com/">Google</a><p>

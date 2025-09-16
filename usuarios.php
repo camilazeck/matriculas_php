@@ -12,6 +12,40 @@ include_once("conexaodb.php");
     <h1>Usuários</h1>
 
     <h2>Usuários cadastrados</h2>
+    <table border="1">
+      <tr>
+        <th>ID de Usuário</th>
+        <th>Nome de Usuário</th>
+        <th>Perfil</th>
+      </tr>
+      <?php
+      $stmt = $pdo->prepare("SELECT * FROM usuarios");
+      $stmt->execute();
+      $resultados = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+      //pegue os resultados
+      $linhas = $stmt->fetchAll();
+      foreach($linhas as $linha) {
+        echo "<tr>";
+        echo "<td>" . $linha['idUsuarios'] . "</td>";
+        echo "<td>" . $linha['NomeUsuario'] . "</td>";
+        echo "<td>";
+        switch ($linha['idPerfil']) {
+          case 1:
+              echo "Administrador";
+              break;
+          case 2:
+              echo "Auxiliar de matrículas";
+              break;
+          case 3:
+              echo "Atendente";
+              break;
+          }
+        echo "</td>";
+        echo "</tr>";
+      }
+    ?>
+  </table>
 
     <h2>Adicionar novo usuário</h2>
     <form action="usuario_add.php" method="get">
