@@ -1,4 +1,5 @@
 <?php
+include_once("login_verifica.php");
 include_once("conexaodb.php");
 
 //verifica se o nome do curso está sendo recebido corretamente pelo backend (PHP).

@@ -1,4 +1,5 @@
 <?php
+include_once("login_verifica.php");
 include("conexaodb.php");
 
 //var_dump($_GET);
